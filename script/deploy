@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ssh 565328117628e175550000da@nodejs-hellojenkinsaam.rhcloud.com -k app-root/data/id_rsa -o UserKnownHostsFile=~/app-root/data/known_hosts <<EOF
-  cd ~/hello-jenkins
+  cd ~/app-root/repo/
   git pull
   npm install --production
   forever restartall
