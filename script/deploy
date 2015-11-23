@@ -3,6 +3,7 @@
 ssh 565328117628e175550000da@nodejs-hellojenkinsaam.rhcloud.com -i ~/app-root/data/id_rsa -o UserKnownHostsFile=~/app-root/data/known_hosts <<EOF
   cd ~/app-root/repo/
   git pull
+  npm install forever -g 
   npm install --production
   forever restartall
   exit
