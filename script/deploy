@@ -2,6 +2,8 @@
 
 ssh 565328117628e175550000da@nodejs-hellojenkinsaam.rhcloud.com -i ~/app-root/data/id_rsa -o UserKnownHostsFile=~/app-root/data/known_hosts <<EOF
   cd ~/app-root/repo/
+  git reset
+  git stash drop
   GIT_SSH=~/app-root/data/bin/git_ssh git pull origin master
   OLDHOME=$HOME
   export HOME=`pwd`
